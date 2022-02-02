@@ -1,0 +1,33 @@
+<div *ngFor="let item of home.data">
+    <div class="">
+        <div class="card">
+            <div class="card-header card-header-success ">
+                <h4 class="card-title">View Courses</h4>
+                <p class="card-category"></p>
+            </div>
+            <div class="card-body table-responsive">
+                <div>
+                    <div>
+                        <div>
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>CourseName</th>
+                                    <th>CoursePrice</th>
+                                    <th>Image</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of home.allemployee">
+                                        <td>{{ item.name}}</td>
+                                        <td>{{ item.email}}</td>
+                                        <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="/assets/Image/{{item.imagename}}" alt="" height="80" width="90"></td>
+                                        <td><button class="btn btn-danger" (click)="home.delete(item.courseId)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
