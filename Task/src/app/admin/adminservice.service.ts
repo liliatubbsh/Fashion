@@ -10,7 +10,7 @@ import { Form } from '@angular/forms';
   providedIn: 'root'
 })
 export class AdminserviceService {
-  
+  data:any=[{}]
   allemployee:any=[{}]
   allproparty:any=[{}]
   allproduct:any=[{}]
@@ -21,8 +21,8 @@ export class AdminserviceService {
   datacatrgory:any=[{}]
   datacategory:any={}
 
-  display_image:string=''
-  displayimage:string=''
+  display_image:any
+
   constructor(private http:HttpClient,private toast:ToastrService) { }
 
 
@@ -119,13 +119,13 @@ GetallProduct()
   UploadingimageProduct(form:FormData)
   {
   
-    const headerDict = {
+    /*const headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
       const requestOptions = {
       headers: new HttpHeaders(headerDict),
-      };
+      };*/
       
       this.http.post('https://localhost:44319/api/Product/uploadimage',form).subscribe((data:any) => {
       this.display_image=data.imagE_PATH;
@@ -209,21 +209,19 @@ GetallProduct()
   UploadingimageCategory(form:FormData)
   {
   
-    const headerDict = {
+   /* const headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
       const requestOptions = {
       headers: new HttpHeaders(headerDict),
-      };
+      };*/
       
-      this.http.post('https://localhost:44319/api/Category/uploadimage',form,requestOptions).subscribe((data:any) => {
-      this.displayimage=data.IMAGE_PATH;
+      this.http.post('https://localhost:44319/api/Category/uploadimage/',form).subscribe((res:any) => {
+      this.display_image=res.image_Path})
       console.log(this.display_image)
       
-      if(data){
-      console.log(this.display_image=data.image_Path);}
-      })
+     
   }
 
 }
