@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminserviceService } from 'src/app/admin/adminservice.service';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(public homeproduct:AdminserviceService) { 
+
+this.homeproduct.GetallProduct();
+
+  }
 
   ngOnInit(): void {
   }
+
+  deleteProduct(id:number)
+  {
+   this.homeproduct.DeleteProduct(id);
+   window.location.reload();
+  }
+
 
 }

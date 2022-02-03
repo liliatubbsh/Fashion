@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminserviceService } from 'src/app/admin/adminservice.service';
 
 @Component({
   selector: 'app-category',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public homecategory:AdminserviceService) {
+
+       this.homecategory.GetallCategory();
+
+   }
 
   ngOnInit(): void {
   }
+
+  deleteCategory(id:number)
+  {
+   this.homecategory.DeleteCategory(id)
+   window.location.reload()
+  }
+
 
 }

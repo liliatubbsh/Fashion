@@ -1,1 +1,19 @@
-<p>create-category works!</p>
+<div class="container">  
+    <form>  
+     
+          
+            
+            <input placeholder="categoey Name" type="text" [(ngModel)]='NAME'  required autofocus>
+    
+             <label>image</label>
+          <input #imageInput
+          type="file"
+          accept="image/*"
+          ngModel="imageInput"
+          (change)="processFile(imageInput.files)">     
+          
+        <button  (click)="Createcategory2()" >Submit</button>
+          
+    
+    
+    </form>  

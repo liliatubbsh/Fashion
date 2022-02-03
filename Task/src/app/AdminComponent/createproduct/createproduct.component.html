@@ -1,1 +1,33 @@
-<p>createproduct works!</p>
+<div class="container">  
+    <form>  
+            
+            <input placeholder="product Name" type="text" [(ngModel)]='name' required autofocus>
+        
+            <input placeholder="description" type="text"  [(ngModel)]='description'   required>
+         
+            <input placeholder="price" type="number" [(ngModel)]='price'  required>
+            
+            <input placeholder="offeR_ID" type="number" [(ngModel)]='offeR_ID' required>
+                   
+            <input placeholder="category_Id" type="number"  [(ngModel)]='category_Id'   required>
+          
+            <input placeholder="dateofadd" type="date"  [(ngModel)]='dateofadd'  required>
+          
+    
+          
+
+         <label>image</label>
+          
+          
+          
+          <input #imageInput
+          type="file"
+          accept="image/*"
+          ngModel="imageInput"
+          (change)="processFile(imageInput.files)">     
+          
+        <button  (click)="CreateProduct2()" >Submit</button>
+          
+    
+    
+    </form>  

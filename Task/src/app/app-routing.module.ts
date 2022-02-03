@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthUserGuard } from './auth-user.guard';
 
 
-
 const routes: Routes = [{path :'',loadChildren:()=>(import('./Module/homemodule/homemodule.module').then((x)=>x.HomemoduleModule))},
 {path :'adminDash',loadChildren:()=>(import('./adminmodule/admin/admin.module').then((x)=>x.AdminModule))},
 {path :'User',loadChildren:()=>(import('./usermodule/user/user.module').then((x)=>x.UserModule)),canActivate:[AuthUserGuard]},

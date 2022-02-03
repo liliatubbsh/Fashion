@@ -9,16 +9,17 @@ import { AdminserviceService } from 'src/app/admin/adminservice.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public home:AdminserviceService,private http:HttpClient) { 
+  constructor(public homeEmployee:AdminserviceService) { 
 
-this.home.getallemployee()
+       this.homeEmployee.GetallEmployee();
   }
 
-  deletebycomponent(id:number)
+  deleteEmployee(id:number)
   {
-   this.home. delete(id)
+   this.homeEmployee.DeleteEmployee(id);
    window.location.reload()
   }
+
 
   ngOnInit(): void {
   }

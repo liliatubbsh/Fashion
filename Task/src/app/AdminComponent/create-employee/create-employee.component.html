@@ -1,1 +1,34 @@
-<p>create-employee works!</p>
+<div class="container">  
+    <form>             
+            <input placeholder="First Name" type="text" [(ngModel)]='Fname'  required autofocus>
+        
+            <input placeholder="Last name" type="text"  [(ngModel)]='Lname'   required>
+         
+            <input placeholder="Address" type="text" [(ngModel)]='Address'  required>
+            
+            <input placeholder="Age" type="text" [(ngModel)]='Age' required> 
+
+            <input placeholder="Date" type="date"  [(ngModel)]='DateReg'   required>
+          
+            <input placeholder="Email" type="text"  [(ngModel)]='Email'  required>
+          
+            <input placeholder="Gender" type="number"  [(ngModel)]='Gender' required>
+
+            <input placeholder="Password" type="text"  [(ngModel)]='Password'  required>
+            <input placeholder="Phone" type="text"  [(ngModel)]='Phone'  required>
+            <input placeholder="Salary" type="text"  [(ngModel)]='Salary'  required>
+            <input placeholder="Username" type="text"  [(ngModel)]='Username'  required>
+
+         <label>image</label>
+          <input #imageInput
+          type="file"
+          accept="image/*"
+          ngModel="imageInput"
+          (change)="processFile(imageInput.files)">     
+          
+        <button  (click)="CreateEmployee2()" >Submit</button>
+          
+    
+    
+    </form>  
+

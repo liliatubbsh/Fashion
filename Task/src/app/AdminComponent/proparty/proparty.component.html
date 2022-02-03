@@ -1,1 +1,50 @@
-<p>proparty works!</p>
+<table class="table table-striped table-advance table-hover">         
+    <thead>
+      <tr>
+        <th><i class="fa fa-bullhorn"></i> name</th>
+        <th class="hidden-phone"><i class="fa fa-question-circle"></i> price</th>
+        <th><i class="fa fa-bookmark"></i> color</th>
+        <th><i class=" fa fa-edit"></i> generalSize</th>
+        <th><i class=" fa fa-edit"></i> uK_SIZE</th>
+        <th><i class=" fa fa-edit"></i> Image</th>
+        <th><i class=" fa fa-edit"></i> Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of homeproparty.allproparty">
+        <td>
+          <h3>{{ item.name}}</h3>
+        </td>
+        <td class="hidden-phone">
+
+          <h5>{{ item.price}}</h5>
+        </td>
+        <td>
+          
+          <h5>{{ item.color}}</h5>
+        
+        </td>
+
+        <td>
+          <h5>{{ item.generalSize}}</h5> 
+        
+        </td>
+
+        <td>
+
+          <h5>{{item.uK_SIZE}}</h5>
+        </td>
+
+      
+
+          <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="../../../assets/image/{{item.productImage}}" alt="" height="80" width="90"></td>
+      
+      <td>
+       
+          <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+         <button    class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+          <button (click)="deleteProparty(item.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+        </td>
+      </tr>
+      

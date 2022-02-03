@@ -53,7 +53,7 @@ import { CreateproductComponent } from './AdminComponent/createproduct/createpro
     CreateEmployeeComponent,
     ProductComponent,
     CreateproductComponent
-    //AddEmolyeeComponent
+    
   ],
   imports: [
      BrowserModule,

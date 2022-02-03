@@ -1,33 +1,58 @@
-<div *ngFor="let item of home.data">
-    <div class="">
-        <div class="card">
-            <div class="card-header card-header-success ">
-                <h4 class="card-title">View Courses</h4>
-                <p class="card-category"></p>
-            </div>
-            <div class="card-body table-responsive">
-                <div>
-                    <div>
-                        <div>
-                            <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <th>CourseName</th>
-                                    <th>CoursePrice</th>
-                                    <th>Image</th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of home.allemployee">
-                                        <td>{{ item.name}}</td>
-                                        <td>{{ item.email}}</td>
-                                        <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="/assets/Image/{{item.imagename}}" alt="" height="80" width="90"></td>
-                                        <td><button class="btn btn-danger" (click)="home.delete(item.courseId)">Delete</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+<table class="table table-striped table-advance table-hover">         
+    <thead>
+      <tr>
+        <th><i class="fa fa-bullhorn"></i> name</th>
+        <th class="hidden-phone"><i class="fa fa-question-circle"></i> email</th>
+        <th><i class="fa fa-bookmark"></i> phone</th>
+        <th><i class=" fa fa-edit"></i> address</th>
+        <th><i class=" fa fa-edit"></i> salary</th>
+        <th><i class=" fa fa-edit"></i> gender</th>
+        <th><i class=" fa fa-edit"></i> Image</th>
+        <th><i class=" fa fa-edit"></i> Action</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of homeEmployee.allemployee">
+        <td>
+          <h3>{{ item.name}}</h3>
+        </td>
+        <td class="hidden-phone">
 
-            </div>
-        </div>
-    </div>
+          <h5>{{ item.email}}</h5>
+        </td>
+        <td>
+          
+          <h5>{{ item.phone}}</h5>
+        
+        </td>
+
+        <td>
+          <h5>{{ item.address}}</h5> 
+        
+          
+          <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+          ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name", product.CategoryId);
+          return View(product);
+
+        </td>
+
+        <td>
+
+          <h5>{{item.salary}}</h5>
+        </td>
+        <td>
+
+            <h5>{{item.gender}}</h5>
+          </td>
+
+          <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="../../../assets/image/{{item.empImage}}" alt="" height="80" width="90"></td>
+      
+      <td>
+       
+          <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+         <button    class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+          <button (click)="deleteEmployee(item.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+        </td>
+      </tr>
+      
