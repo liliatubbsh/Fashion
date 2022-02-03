@@ -6,6 +6,7 @@ import { AdminserviceService } from 'src/app/admin/adminservice.service';
   templateUrl: './create-category.component.html',
   styleUrls: ['./create-category.component.css']
 })
+
 export class CreateCategoryComponent implements OnInit {
 
   NAME:string="";
@@ -24,7 +25,7 @@ export class CreateCategoryComponent implements OnInit {
 
   processFile(file:any)
   {
-   
+  
     let fileToUpload = <File>file[0];//c://fakepath/
     this.selectedFile=fileToUpload.name
     const formData = new FormData();
@@ -33,10 +34,6 @@ export class CreateCategoryComponent implements OnInit {
     console.log(this.selectedFile)
  
   }
-
-
-
-
   ngOnInit(): void {
   }
 
