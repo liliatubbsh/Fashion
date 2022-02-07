@@ -1,0 +1,21 @@
+/* your styles go here */
+
+.page-content {
+    background: url(https://cdn.pixabay.com/photo/2021/06/30/04/18/wheats-6375839_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.Ourcard {
+    background: linear-gradient(247deg, rgba(170, 145, 102, 1) 0%, rgba(0, 0, 0, 0.4150035014005602) 0%);
+    border: 4px solid #aa9166;
+}
+
+.Oursidebar-link:hover {
+    background: #aa9166;
+}
+
+.Oursidebar-item.active>.Oursidebar-link {
+    background: #aa9166;
+}

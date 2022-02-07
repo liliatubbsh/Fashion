@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { LoginComponent } from './logincomponent/login/login.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -26,7 +26,24 @@ import { CreatepropartyComponent } from './AdminComponent/createproparty/createp
 import { CreateEmployeeComponent } from './AdminComponent/create-employee/create-employee.component';
 import { ProductComponent } from './AdminComponent/product/product.component';
 import { CreateproductComponent } from './AdminComponent/createproduct/createproduct.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AddEmolyeeComponent } from './AdminComponent/admin/add-emolyee/add-emolyee.component';
+import{MatDialogModule} from'@angular/material/dialog';
+import { EditecategoryComponent } from './AdminComponent/editecategory/editecategory.component';
+import { EditeemployeeComponent } from './AdminComponent/editeemployee/editeemployee.component';
+import { EditeproductComponent } from './AdminComponent/editeproduct/editeproduct.component';
+import { DeliveryComponent } from './AdminComponent/delivery/delivery.component';
+import { EditedeliveryComponent } from './AdminComponent/editedelivery/editedelivery.component';
+import { CreatedeliveryComponent } from './AdminComponent/createdelivery/createdelivery.component';
+import { EditeOrderComponent } from './AdminComponent/edite-order/edite-order.component'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+
+
 
 
 @NgModule({
@@ -52,14 +69,32 @@ import { CreateproductComponent } from './AdminComponent/createproduct/createpro
     CreatepropartyComponent,
     CreateEmployeeComponent,
     ProductComponent,
-    CreateproductComponent
+    CreateproductComponent,
+    EditecategoryComponent,
+    EditeemployeeComponent,
+    EditeproductComponent,
+    DeliveryComponent,
+    EditedeliveryComponent,
+    CreatedeliveryComponent,
+    EditeOrderComponent,
+   
     
   ],
   imports: [
      BrowserModule,
      AppRoutingModule,
-     ReactiveFormsModule,FormsModule,HttpClientModule,
-     ToastrModule.forRoot({progressBar:true,timeOut:2000})
+     FormsModule,HttpClientModule,
+     ToastrModule.forRoot({progressBar:true,timeOut:2000}),
+     NgbModule,
+     BrowserAnimationsModule,
+     MatDialogModule,
+     NgxSpinnerModule,
+     MatProgressSpinnerModule,
+  
+    ReactiveFormsModule,
+ 
+
+
   
   ],
   providers: [],

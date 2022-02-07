@@ -1,19 +1,93 @@
-<div class="container">  
-    <form>  
-        
-        
-            <input placeholder="prparty quantity" type="text" [(ngModel)]='quantity' required autofocus>
-            <input placeholder="COLOR_ID" type="number"  [(ngModel)]='COLOR_ID'  required>
-            <input placeholder="SIZE_ID" type="number"  [(ngModel)]='SIZE_ID'  required>
-            <input placeholder="PRODUCT_ID" type="number"  [(ngModel)]='PRODUCT_ID'  required>
-            <input placeholder="SKIN_ID" type="number"  [(ngModel)]='SKIN_ID'  required>
-            <input placeholder="AGE_ID" type="number"  [(ngModel)]='AGE_ID'  required>
-        
-          
-        <button (click)="CreateProparty2()">Submit</button>
-          
-    
-    
-    </form>  
-    
-    
+
+<div class="container">
+    <h1>Create</h1>
+    <h4>Proparty</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-10">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Prparty Quantity</label>
+                        <div class="col-md-10">
+                            <input placeholder="prparty quantity" type="text" [(ngModel)]='P_quantity' required autofocus>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Prparty Quantity</label>
+                        <div class="col-md-10">
+                            <label>coloR_PRODUCT </label>
+                            <select [(ngModel)]='P_COLOR_ID'>
+                                <option *ngFor="let item of homecreatepropaty.allCOLOR" value="{{item.id}}">{{item.coloR_PRODUCT}}</option>
+                            </select>                 
+                        </div>
+                    </div>
+                </div>
+               
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Prparty Quantity</label>
+                        <div class="col-md-10">
+                            <label>sizE_GENERAL </label>
+                            <select [(ngModel)]='P_SIZE_ID'>
+                                <option *ngFor="let item of homecreatepropaty.allSIZE"  value= "{{item.id}}">{{item.sizE_GENERAL}}</option>
+                            </select>
+                            </div>
+                    </div>
+                </div>
+               
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Prparty Quantity</label>
+                        <div class="col-md-10">
+                            <label>name of product </label>
+                            <select [(ngModel)]='P_PRODUCT_ID'>
+                                <option *ngFor="let item of homecreatepropaty.allproduct"  value="{{item.id}}">{{item.name}}</option>
+                         
+                            </select>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>color_Skin </label>
+                        <select [(ngModel)]='P_SKIN_ID'>
+                            <option *ngFor="let item of homecreatepropaty.allSKIN"  value="{{item.id}}">{{item.color_Skin}}</option>
+                     
+                        </select>
+                    </div>
+                    </div>
+            
+               
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>AgE_PERIOD </label>
+                        <select [(ngModel)]='P_AGE_ID'>
+                            <option *ngFor="let item of homecreatepropaty.allAGE" value="{{item.id}}">{{item.agE_PERIOD}}</option>
+                     
+                        </select>
+                    </div>
+                    </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button (click)="CreateProparty2()" class="btn btn-primary" > Submite</button>
+                    </div>
+                </div>
+
+               </div>
+     </div>
+
+  
+</div>
+
+
+
+
+

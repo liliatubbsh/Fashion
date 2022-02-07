@@ -1,0 +1,85 @@
+<h1>Edit</h1>
+<h4>product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+            <input type="hidden" asp-for="Id" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Name product</label>
+
+                    <div class="col-md-10">
+                 
+                        <input  type="text" [(ngModel)]='name' value="{{ service.dataofProduct.name}}">
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">description product</label>
+
+                    <div class="col-md-10">
+                 
+                        <input  type="text" [(ngModel)]='description' value="{{ service.dataofProduct.description}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">price</label>
+                    <div class="col-md-10">
+                        <input  type="text" [(ngModel)]='price' value="{{ service.dataofProduct.price}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">OffeR</label>
+
+                    <div class="col-md-10">
+                 
+                        <input  type="text" [(ngModel)]='offeR_ID' value="{{ service.dataofProduct.offeR_ID}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  class="control-label">Name category</label>
+
+                    <div class="col-md-10">
+                        <input  type="text" [(ngModel)]='category_Id' value="{{ service.dataofProduct.name}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  class="control-label">Date add product</label>
+
+                    <div class="col-md-10">
+                 
+                        <input placeholder="categoey Name" type="date" [(ngModel)]='dateofadd' value="{{ service.dataofProduct.dateofadd |date:'yyyy-MM-dd'}}">
+                    </div>
+                </div>
+            </div>
+
+          
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Image</label>
+                    <div class="col-md-10">   
+                        <label>image</label>
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" value=" {{ service.dataofProduct.image_Path }}" (change)="processFile(imageInput.files)">                  
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<button type="submit" (click)=" UpdateProduct2()" > Edite</button>
+

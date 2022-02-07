@@ -1,0 +1,103 @@
+
+<h4>Orders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Customer Name</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='CustomerName' value="{{ service.dataofOrder.CustomerName}}"readonly>
+
+
+                    </div>
+                </div>
+            </div>
+          
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Customer Name</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='CustomerName' value="{{ service.dataofOrder.CustomerName}}" readonly>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Customer phoneNumber</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='phoneNumber' value="{{ service.dataofOrder.phoneNumber}}" readonly>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Customer address</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='address' value="{{ service.dataofOrder.address}}" readonly>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">TotalPrice</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='TotalPrice' value="{{ service.dataofOrder.TotalPrice}}" readonly>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Date</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='Date'  value="{{ service.dataofOrder.Date |date:'yyyy-MM-dd'}}" readonly>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+    </div>
+</div>
+
+<button type="submit" (click)="close()" > Close</button>

@@ -13,7 +13,7 @@ export class HomeService {
   getallProparty()
   {
     
-    const headersDict={
+    const headersDict={   
       'content-type':'application/json',
       Accept:'application/json'
     };

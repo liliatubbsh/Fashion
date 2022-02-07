@@ -1,3 +1,5 @@
+
+
 <table class="table table-striped table-advance table-hover">         
     <thead>
       <tr>
@@ -27,24 +29,18 @@
         </td>
 
         <td>
-          <h5>{{ item.generalSize}}</h5> 
+          <h5>{{item.generalSize}}</h5> 
         
         </td>
 
         <td>
-
           <h5>{{item.uK_SIZE}}</h5>
         </td>
-
-      
-
           <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="../../../assets/image/{{item.productImage}}" alt="" height="80" width="90"></td>
       
       <td>
-       
-          <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-         <button    class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-          <button (click)="deleteProparty(item.id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+         <button class="btn btn-primary btn-xs">Edite</button>
+          <button (click)="deleteProparty(item.id)" class="btn btn-danger btn-xs">delelte</button>
         </td>
       </tr>
       

@@ -1,0 +1,33 @@
+
+<h1>Edit</h1>
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+      
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name category" class="control-label">Name category</label>
+
+                    <div class="col-md-10">
+                 
+                        <input type="text" [(ngModel)]='name' value="{{ service.dataofcategory.name}}">
+
+                    </div>
+                </div>
+            </div>
+          
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Image</label>
+                    <div class="col-md-10">     
+                        <label>image</label>
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" value=" {{ service.dataofcategory.image_Path }}" (change)="processFile(imageInput.files)">                  
+                    </div>
+                </div>
+            </div>            
+    </div>
+</div>
+
+<button type="submit" (click)="Updatecategory2()" > Edite</button>

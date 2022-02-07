@@ -1,15 +1,46 @@
-<div class="container">  
-    <form>  
-            <input placeholder="categoey Name" type="text" [(ngModel)]='NAME'  required autofocus>
-  
+
+<div class="container">
+    <h1>Create</h1>
+
+    <h4>Category</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-10">
+
+              
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">categoey Name</label>
+                        <div class="col-md-10">
+                            <input type="text" [(ngModel)]='Name' required autofocus>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Image</label>
+                        <div class="col-md-10">
+                            <input #imageInput type="file" accept="image/*" ngModel="imageInput" (change)="processFile(imageInput.files)">
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <button (click)="Createcategory2()" class="btn btn-primary" > Submite</button>
+                    </div>
+                </div>
             
-             <label>image</label>
-          <input #imageInput
-          type="file"
-          accept="image/*"
-          ngModel="imageInput"
-          (change)="processFile(imageInput.files)">     
-          
-        <button  (click)="Createcategory2()" >Submit</button>
-    
-    </form>  
+</div>
+    </div>
+
+  
+</div>
+
+

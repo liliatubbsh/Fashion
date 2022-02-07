@@ -1,0 +1,82 @@
+<h1>Edit</h1>
+<h4>Emploee</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Emploee Name" class="control-label">Emploee Name</label>
+                    <div class="col-md-10">
+                    <input placeholder="Emploee Name" type="text" [(ngModel)]='Name' value="{{ service.dataofEmploye.Name}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="email" class="control-label">Email</label>
+                    <div class="col-md-10">
+                    <input placeholder="Email" type="text" [(ngModel)]='email' value="{{ service.dataofEmploye.email}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Emploee phone" class="control-label">phone</label>
+                    <div class="col-md-10">
+                   <input placeholder="Emploee phone" type="text" [(ngModel)]='phone' value="{{ service.dataofEmploye.phone}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Emploee Age" class="control-label">Age</label>
+                    <div class="col-md-10">
+                  <input placeholder="Emploee Age" type="text" [(ngModel)]='address' value="{{ service.dataofEmploye.address}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Emploee salary" class="control-label">Emploee salary</label>
+                    <div class="col-md-10">
+                  <input placeholder="Emploee salary" type="text" [(ngModel)]='salary' value="{{ service.dataofEmploye.salary}}">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label">Email</label>
+
+                    <div class="col-md-10">
+                  <input placeholder="Email" type="text" [(ngModel)]='gender' value="{{ service.dataofEmploye.gender}}">
+                    </div>
+                </div>
+            </div>
+
+                      
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label class="control-label">Image</label>
+                    <div class="col-md-10">
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput"  (change)="processFile()">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<button type="submit" (click)="Updateemployee2()" > Edite</button>
+

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from 'src/app/admin/adminservice.service';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-createproduct',
@@ -7,31 +9,57 @@ import { AdminserviceService } from 'src/app/admin/adminservice.service';
   styleUrls: ['./createproduct.component.css']
 })
 export class CreateproductComponent implements OnInit {
-
-
-  name:string="";
-  description: string='';
-  price:number=0;
-  offeR_ID?:number;
-  category_Id?:number;
-  dateofadd:Date=new Date;
- 
+  productName:string="";
+  productdescription:string='';
+  productPrice:number=0;
+  productoffeR_ID?:any;
+  productcategory_Id?:any;
+  productdateofadd:Date=new Date;
   selectedFile:string="";
+  imagename:string=''
   imagefile:File|any=null;
-  constructor(public homecreateproduct:AdminserviceService) { 
+  myBooks:any=[]
+  selected = null;
+  ListOfCat:any=[{}]
+  Createproduct:FormGroup|any
+  constructor(public homecreateproduct:AdminserviceService,private fb:FormBuilder,private httpService: HttpClient) { 
+   
+    this.Createproduct=this.fb.group({
+        
+      productName:new FormControl(),  
+      productdescription:new FormControl(),  
+      productPrice:new FormControl(),  
+      productoffeR_ID:new FormControl(),  
+      productcategory_Id:new FormControl(),  
+      productdateofadd:new FormControl(),  
+      selectedFile:new FormControl(), 
+      imagename: new FormControl(),     
+
+   })
+   
+   
+   
+    this.homecreateproduct.GetallCategory() 
+   this.homecreateproduct.GetallOffered()
   }
-  CreateProduct2()
+  
+CreateProduct2()
   {
+    
   let object={
-  productName:this.name,
-  productPrice:this.price,
-  productdescription:this.description,
-  productoffeR_ID:this.offeR_ID,
-  productcategory_Id:this.category_Id,
-  productdateofadd:this.dateofadd,
-  propartyimagename:this.homecreateproduct.display_image
+    Name:this.productName,
+    Description:this.productdescription,
+    Price:this.productPrice,
+    OFFER_ID:parseInt(this.productoffeR_ID),
+    Category_Id:parseInt(this.productcategory_Id),
+    Dateofadd:this.productdateofadd,
+    IMAGE_PATH:this.homecreateproduct.display_image
+ 
   }
   this.homecreateproduct.CreateProduct(object)
+
+ 
+console.log(this.productcategory_Id)
   }
 
   processFile(file:any)
@@ -45,9 +73,10 @@ export class CreateproductComponent implements OnInit {
     console.log(this.selectedFile)
  
   }
-
-
+ 
   ngOnInit(): void {
+
+    
   }
 
 }

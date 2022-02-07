@@ -10,9 +10,14 @@ export class PropartyComponent implements OnInit {
 
   constructor(public homeproparty:AdminserviceService) {
 
-
      this.homeproparty.Getallproparty();
-
+     this.homeproparty.GetallProduct();
+     this.homeproparty.GetallCategory();
+     this.homeproparty.GetallOffered();
+     this.homeproparty.GetallAGE();
+     this.homeproparty.GetallCOLOR();
+     this.homeproparty.GetallSKIN();
+     this.homeproparty.GetallSIZE();
 
    }
 

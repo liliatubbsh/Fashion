@@ -1,0 +1,24 @@
+
+<div class="container">
+    <input placeholder="Delivery Name" type="text" [(ngModel)]='eFname' required autofocus>
+    <input placeholder="Delivery eLname" type="text" [(ngModel)]='eLname' required autofocus>
+    <input placeholder="Delivery eAddress" type="text" [(ngModel)]='eAddress' required autofocus>
+    <input placeholder="Delivery eDateReg" type="date" [(ngModel)]='eDateReg' required autofocus>
+    <input placeholder="Delivery eEmail" type="text" [(ngModel)]='eEmail' required autofocus>
+  
+  
+    <label class="col-md-3">eGender</label>
+    <div class="col-md-9">
+      <input type="radio" [(ngModel)]='eGender' value="1" /> Female
+      <input type="radio" [(ngModel)]='eGender' value="2"/> Male
+    </div>
+  
+    <input placeholder="Delivery eSalary" type="number" [(ngModel)]='eSalary' required autofocus>
+    <input placeholder="Delivery ePassword" type="text" [(ngModel)]='ePassword' required autofocus>
+    <input placeholder="Delivery eUsername" type="text" [(ngModel)]='eUsername' required autofocus>
+    <input placeholder="Delivery eUsername" type="text" [(ngModel)]='ePhone' required autofocus>
+  
+    <label>image</label>
+    <input #imageInput type="file" accept="image/*" ngModel="imageInput" (change)="processFile(imageInput.files)">
+  
+    <button (click)="CreateDelivery2()">Submit</button>
