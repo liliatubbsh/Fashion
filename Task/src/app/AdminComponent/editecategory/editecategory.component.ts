@@ -17,7 +17,7 @@ export class EditecategoryComponent implements OnInit {
   imagename:string=''
   CreateCategory:FormGroup|any
 
-  constructor(private router:Router,private matdialog:MatDialog,@Inject(MAT_DIALOG_DATA)public data:{id:number},public service:AdminserviceService,private fb:FormBuilder) {
+constructor(private router:Router,private matdialog:MatDialog,@Inject(MAT_DIALOG_DATA)public data:{id:number},public service:AdminserviceService,private fb:FormBuilder) {
     this.service.id=data.id
     this.service.GetCategorybyid();
     console.log(data.id)
@@ -28,14 +28,12 @@ export class EditecategoryComponent implements OnInit {
     let object={
     id:this.data.id,
     name:this.name,
-    image_Path:this.imagefile
+    image_Path:this.service.display_image
   }
-
     this.service.updateCategory(object)
     this.router.navigate(['/adminDash/category'])
     window.location.reload()
     this.matdialog.closeAll()
-
   }
 
   processFile(file:any)

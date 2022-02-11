@@ -1,5 +1,89 @@
+<table class="table table-striped table-advance table-hover">         
+  <thead>
+    <tr>
+      <th><i class="fa fa-bullhorn"></i>Color PRODUCT </th>
+      <th><i class=" fa fa-edit"></i> Action </th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let item of homeproparty.allCOLOR">
+      <td>
+        <h3>{{ item.coloR_PRODUCT}}</h3>
+      </td>
+       <td>
+          <button (click)="deletecolor(item.id)" class="btn btn-danger btn-xs">delelte</button>
+        </td>
+    </tr>
+   </tbody>
+   </table>
+   
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
+<table class="table table-striped table-advance table-hover">         
+  <thead>
+    <tr>
+      <th><i class="fa fa-bullhorn"></i>Color Skin </th>
+      <th><i class=" fa fa-edit"></i> Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let item of homeproparty.allSKIN">
+      <td>
+        <h3>{{ item.color_Skin}}</h3>
+         </td>
+           <td>
+        <button (click)="deleteSkin(item.id)" class="btn btn-danger btn-xs">delelte</button>
+         </td>
+    </tr>
+   </tbody>
+   </table>
+   ////////////////////////////////////////////////////////////////
+   <table class="table table-striped table-advance table-hover">         
+    <thead>
+      <tr>
+        <th><i class="fa fa-bullhorn"></i>SizE_UK</th>
+        <th><i class="fa fa-bullhorn"></i>SizE_EUR</th>
+        <th><i class="fa fa-bullhorn"></i>SizE_GENERAL</th>
+        <th><i class="fa fa-bullhorn"></i>MaX_WIEGHT </th>
+        <th><i class="fa fa-bullhorn"></i>MiN_WIEGHT</th>
+        <th><i class="fa fa-bullhorn"></i>MaX_HIGHE</th>
+        <th><i class="fa fa-bullhorn"></i>MiN_HIGHE</th>
+        <th><i class=" fa fa-edit"></i> Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of homeproparty.allSIZE">
+        <td>
+          <h3>{{ item.sizE_UK}}</h3>
+        </td>
 
+        <td>
+          <h3>{{ item.sizE_EUR}}</h3>
+        </td>
+
+        <td>
+          <h3>{{ item.sizE_GENERAL}}</h3>
+        </td>
+
+        <td>
+          <h3>{{ item.maX_WIEGHT}}</h3>
+        </td>
+
+        <td>
+          <h3>{{ item.miN_WIEGHT}}</h3>
+        </td>
+
+        <td>
+          <h3>{{ item.maX_HIGHE}}</h3>
+        </td>
+
+        <td>
+          <h3>{{ item.miN_HIGHE}}</h3>
+        </td>
+      </tr>
+     </tbody>
+     </table>
+///////////////////////////////////////////////////////////////////////////
 <table class="table table-striped table-advance table-hover">         
     <thead>
       <tr>
@@ -10,7 +94,6 @@
         <th><i class=" fa fa-edit"></i> uK_SIZE</th>
         <th><i class=" fa fa-edit"></i> Image</th>
         <th><i class=" fa fa-edit"></i> Action</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -19,12 +102,10 @@
           <h3>{{ item.name}}</h3>
         </td>
         <td class="hidden-phone">
-
           <h5>{{ item.price}}</h5>
         </td>
-        <td>
-          
-          <h5>{{ item.color}}</h5>
+        <td>          
+          <h5>{{ item.color}}</h5> 
         
         </td>
 
@@ -32,14 +113,13 @@
           <h5>{{item.generalSize}}</h5> 
         
         </td>
-
         <td>
-          <h5>{{item.uK_SIZE}}</h5>
+          <h5 >{{item.euR_SIZE}}</h5>
         </td>
-          <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="../../../assets/image/{{item.productImage}}" alt="" height="80" width="90"></td>
-      
+
+        <td><img style="border-radius:20%;margin: 0 !important;padding:  0 !important;" src="../../../assets/image/{{item.imagE_PATH}}" alt="" height="80" width="90"></td>
       <td>
-         <button class="btn btn-primary btn-xs">Edite</button>
+         <button class="btn btn-primary btn-xs">Edit</button>
           <button (click)="deleteProparty(item.id)" class="btn btn-danger btn-xs">delelte</button>
         </td>
       </tr>

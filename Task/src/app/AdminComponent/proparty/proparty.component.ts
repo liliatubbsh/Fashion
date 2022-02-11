@@ -18,6 +18,7 @@ export class PropartyComponent implements OnInit {
      this.homeproparty.GetallCOLOR();
      this.homeproparty.GetallSKIN();
      this.homeproparty.GetallSIZE();
+     this.homeproparty.GetallSIZEbyid();
 
    }
 
@@ -30,6 +31,16 @@ export class PropartyComponent implements OnInit {
    window.location.reload();
   }
 
+  deletecolor(id:number)
+  {
+   this.homeproparty.Deletecolor(id);
+   window.location.reload();
+  }
 
+  deleteSkin(id:number)
+  {
+   this.homeproparty.Deletecolorskin(id);
+   window.location.reload();
+  }
 
 }

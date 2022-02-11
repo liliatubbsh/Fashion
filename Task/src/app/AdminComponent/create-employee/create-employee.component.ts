@@ -21,8 +21,8 @@ export class CreateEmployeeComponent implements OnInit {
   eLy?:null
   ePassword:string=''
   ePhone:string=''
-  eRol_Id:number=7
-  eSalary?:number
+  eRol_Id?:any
+  eSalary?:any
   eSkinColor?:null
   eUsername:string=''
   eWeight?:null
@@ -46,12 +46,10 @@ export class CreateEmployeeComponent implements OnInit {
       Salary:new FormControl(), 
       Username:new FormControl(), 
       Height:new FormControl(), 
-       Lx:new FormControl(), 
-        Ly:new FormControl(), 
-         SkinColor:new FormControl(), 
-        Weigh:new FormControl()
-       
-
+      Lx:new FormControl(), 
+      Ly:new FormControl(), 
+      SkinColor:new FormControl(), 
+      Weigh:new FormControl()
    })}
   
   CreateEmployee2()
@@ -67,15 +65,15 @@ export class CreateEmployeeComponent implements OnInit {
     Gender:parseInt(this.eGender),
     Password:this.ePassword,
     Phone:this.ePhone,
-    Rol_Id:this.eRol_Id,
-    Salary:this.eSalary,
+    Rol_Id:parseInt(this.eRol_Id),
+    Salary:parseInt(this.eSalary),
     Username:this.eUsername,
     Height:this.eHeight,
-     Lx:this.eLx,
+    Lx:this.eLx,
     Ly:this.eLy,
-     SkinColor:this.eSkinColor,
-     Weigh:this.eWeight,
-     IMAGE_PATH:this.homecreateEmployee.display_image
+    SkinColor:this.eSkinColor,
+    Weigh:this.eWeight,
+    IMAGE_PATH:this.homecreateEmployee.display_image
   }
   this.homecreateEmployee.CreateEmployee(object)
   }

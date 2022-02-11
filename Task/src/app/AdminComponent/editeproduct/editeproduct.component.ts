@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminserviceService } from 'src/app/admin/adminservice.service';
+
 
 @Component({
   selector: 'app-editeproduct',
@@ -11,42 +12,62 @@ import { AdminserviceService } from 'src/app/admin/adminservice.service';
 })
 export class EditeproductComponent implements OnInit {
 
-  name:string=''
-  description:string=''
-  price:number=0
-  imagE_PATH:string=''
-  offeR_ID:any
-  category_Id:any
-  dateofadd?:Date
+  productName:string="";
+  productdescription:string='';
+  productPrice?:any;
+  productoffeR_ID?:any;
+  productcategory_Id?:any;
+  productdateofadd:Date=new Date;
   selectedFile:string="";
+  imagename:string=''
   imagefile:File|any=null;
+  myBooks:any=[]
+  selected = null;
+  ListOfCat:any=[{}]
+  Createproduct:FormGroup|any
 
+  constructor(public productservice:AdminserviceService,private router:Router,private matdialog:MatDialog,@Inject(MAT_DIALOG_DATA)public data:{id:number}
+  ,private fb:FormBuilder) { 
+   
+    
+    this.Createproduct=this.fb.group({
+        
+      productName:new FormControl(),  
+      productdescription:new FormControl(),  
+      productPrice:new FormControl(),  
+      productoffeR_ID:new FormControl(),  
+      productcategory_Id:new FormControl(),  
+      productdateofadd:new FormControl(),  
+      selectedFile:new FormControl(), 
+      imagename: new FormControl(),     
 
+   })
 
-  constructor(private router:Router,private matdialog:MatDialog,@Inject(MAT_DIALOG_DATA)public data:{id:number}
-  ,public service:AdminserviceService,private fb:FormBuilder) { 
-    this.service.id=data.id
-    this.service.GetProductbyid();
-    this.service.GetallProduct();
-    this.service.GetallCategory();
-    this.service.GetallOffered();
-    console.log(data.id)
-
+   this.productservice.id=data.id
+   this.productservice.GetProductbyid();
+   this.productservice.GetallProduct();
+   this.productservice.GetallCategory();
+   this.productservice.GetallOffered();
+   console.log(data.id)
+   
   }
 
   UpdateProduct2(){
     let object={
       id:this.data.id,
-      name:this.name,
-      description:this.description,
-      price: this.price,
-      imagE_PATH:this.imagefile,
-      offeR_ID:this.offeR_ID,
-      category_Id:this.category_Id,
-      dateofadd:this.dateofadd,
-
+      Name:this.productName,
+      Description:this.productdescription,
+      Price:parseInt(this.productPrice),
+      OFFER_ID:parseInt(this.productoffeR_ID),
+      Category_Id:parseInt(this.productcategory_Id),
+      Dateofadd:this.productdateofadd,
+      IMAGE_PATH:this.productservice.display_image
+   
     }
-    this.service.updateProduct(object)
+    this.productservice.updateProduct(object)
+    this.router.navigate(['/adminDash/product'])
+    window.location.reload()
+    this.matdialog.closeAll()
 
   }
 
@@ -56,7 +77,7 @@ export class EditeproductComponent implements OnInit {
     this.selectedFile=fileToUpload.name
     const formData = new FormData();
     formData.append('file', fileToUpload,fileToUpload.name);
-    this.service.updateProduct(formData)
+    this.productservice.UploadingimageProduct2(formData)
     console.log(this.selectedFile)
  
   }

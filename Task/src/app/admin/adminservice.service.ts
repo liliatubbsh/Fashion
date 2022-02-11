@@ -6,6 +6,8 @@ import{ HttpHeaders} from '@angular/common/http'
 import { error } from '@angular/compiler/src/util';
 import { Form } from '@angular/forms';
 import { NgxSpinnerService } from "ngx-spinner";
+import { Proparty } from './Proparty';
+
 
 @Injectable({
   providedIn: 'root'
@@ -46,6 +48,8 @@ export class AdminserviceService {
   NumOfUser:any=[{}]
   NumOfSales:any=[{}]
   SumOfSalaries:any=[{}]
+
+  allSIZEbyid:any={}
 
   constructor(private http:HttpClient,private toast:ToastrService) { }
 
@@ -108,7 +112,7 @@ UploadimageEmployee(form:FormData)
     headers: new HttpHeaders(headerDict),
     };
  
-    this.http.post('https://localhost:44319/api/User/uploadimage/',form).subscribe((data:any) => {
+    this.http.post('https://localhost:44319/api/User/uploadimage',form).subscribe((data:any) => {
     this.display_image=data.empImage;
     console.log(this.display_image)
     if(data){
@@ -211,10 +215,23 @@ GetallProduct()
     this.http.post('https://localhost:44319/api/Property/NewProperty',form,requestOptions).subscribe((res)=>{console.log("sadda")
   
     this.toast.success("Valid") 
-  },(error:any)=>{this.toast.error("invalid")})
-
-  
+  },(error:any)=>{this.toast.error("invalid")})  
   } 
+  UploadingimageProparty(form:FormData)
+  {
+  
+   const headerDict = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+      const requestOptions = {
+      headers: new HttpHeaders(headerDict),
+      };
+      this.http.post('https://localhost:44319/api/Property/uploadimage',form).subscribe((res:any) => {
+      this.display_image=res.image_Path})
+      console.log(this.display_image)
+  }
+
 /////////////////////////////////////////////////////
   GetallCategory()
   {
@@ -266,7 +283,7 @@ GetallProduct()
       headers: new HttpHeaders(headerDict),
       };
       
-      this.http.post('https://localhost:44319/api/Category/uploadimage/',form).subscribe((res:any) => {
+      this.http.post('https://localhost:44319/api/Category/uploadimage',form).subscribe((res:any) => {
       this.display_image=res.image_Path})
       console.log(this.display_image)
   }
@@ -275,43 +292,43 @@ GetallProduct()
   
   updateEmploye(form:any)
   {
-  
-    const headersDict={
-      'content-type':'application/json',
-      Accept:'application/json'
+    console.log(form)
+    const headerDict = {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     };
-    const requestOptions={
-      headers: new HttpHeaders(headersDict),
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict),
     };
-    this.http.put('https://localhost:44340/api/User/UpdateUser',form,requestOptions).subscribe((res)=>{
+    console.log(form)
+    this.http.put('https://localhost:44319/api/User/UpdateUser',form,requestOptions).subscribe((res)=>{console.log("sadda")
   
-  
-  console.log(true)
-  
-    })
+    this.toast.success("Valid") 
+  },(error:any)=>{this.toast.error("invalid")})
   }
+
+  UploadingimageEmploee2(form:FormData)
+ {
+  const headerDict = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+    }
+    const requestOptions = {
+    headers: new HttpHeaders(headerDict),
+    };
+ 
+    this.http.put('https://localhost:44319/api/User/updateimage',form).subscribe((data:any) => {
+    this.display_image=data.empImage;
+    console.log(this.display_image)
+    if(data){
+    console.log(this.display_image=data.empImage);}
+    })
+}
 
 
 
 ////////////////////////////////////////////////////////////////
-updateProduct(form:any)
-{
 
-  const headersDict={
-    'content-type':'application/json',
-    Accept:'application/json'
-  };
-  const requestOptions={
-    headers: new HttpHeaders(headersDict),
-  };
-  this.http.put('https://localhost:44340/api/monther1111std',form,requestOptions).subscribe((res)=>{
-
-
-console.log(true)
-
-  })
-}
-//////////////////////////////////////////////////////////////////////
 updateProparty(form:any)
 {
 
@@ -322,13 +339,25 @@ updateProparty(form:any)
   const requestOptions={
     headers: new HttpHeaders(headersDict),
   };
-  this.http.put('https://localhost:44340/api/monther1111std',form,requestOptions).subscribe((res)=>{
-
-
+  this.http.put('https://localhost:44319/api/Property/UpdateProperty',form,requestOptions).subscribe((res)=>{
 console.log(true)
 
   })
 }
+UploadingimageProparty2(form:FormData)
+{
+ const headerDict = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+    }
+    const requestOptions = {
+    headers: new HttpHeaders(headerDict), };
+    this.http.put('https://localhost:44319/api/Property/updateimage',form).subscribe((res:any) => {
+    this.display_image=res.image_Path})
+    console.log(this.display_image)  
+}
+
+
 //////////////////////////////////////////////////////////////////////////
 
 GetCategorybyid()
@@ -348,9 +377,8 @@ updateCategory(form:any)
   };
   this.http.put('https://localhost:44319/api/Category',form,requestOptions).subscribe((res)=>{
 console.log(true)
-  })
-}
-
+  })}
+  
 UploadingimageCategory2(form:FormData)
 {
  const headerDict = {
@@ -359,8 +387,8 @@ UploadingimageCategory2(form:FormData)
     }
     const requestOptions = {
     headers: new HttpHeaders(headerDict), };
-    this.http.put('https://localhost:44319/api/Category/updateimage/',form).subscribe((res:any) => {
-    this.display_image2=res.image_Path})
+    this.http.put('https://localhost:44319/api/Category/updateimage',form).subscribe((res:any) => {
+    this.display_image=res.image_Path})
     console.log(this.display_image)  
 }
 
@@ -388,6 +416,14 @@ GetallCOLOR()
     },(error:any)=>{this.toast.error("invalid")})
   }
  
+
+  GetallSIZEbyid()
+  {
+   return this.http.get('https://localhost:44319/api/StandaredSize/GetSizeById/'+this.id).subscribe((res)=>{this.allSIZEbyid=res
+   this.toast.success("Valid") 
+    },(error:any)=>{this.toast.error("invalid")})
+  }
+
 
   GetallAGE()
   {
@@ -464,10 +500,6 @@ GetallCOLOR()
       console.log(this.display_image=data.empImage);}
       })
   }
-
-
-
-
 
   GetOfferedbyid()
   {
@@ -561,8 +593,96 @@ GetallCOLOR()
     },(error:any)=>{this.toast.error("invalid")})
   }
 
+updateProduct(form:any)
+{
+  console.log(form)
+  const headerDict = {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  };
+  const requestOptions = {
+    headers: new HttpHeaders(headerDict),
+  };
+  console.log(form)
+  this.http.put('https://localhost:44319/api/Product/UpdateProduct',form,requestOptions).subscribe((res)=>{console.log("sadda")})
+
+  }
+  
+    UploadingimageProduct2(form:FormData)
+    {
+     const headerDict = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+        }
+        const requestOptions = {
+        headers: new HttpHeaders(headerDict), };
+        this.http.put('https://localhost:44319/api/Product/updateImage',form).subscribe((res:any) => {
+        this.display_image=res.imagE_PATH})
+        console.log(this.display_image)  
+    }
 
 
+    Deletecolor(id:number)
+    {
+    
+     this.http.delete('https://localhost:44319/api/ProductColor/'+id).subscribe((res)=>{this.dataorder=res
+      this.toast.success("Valid") 
+        },(error:any)=>{
+      
+        setTimeout(() => {
+          this.toast.error("invalid")
+        }, 20000000000000000000000000);
+      })
+    }
+    Deletecolorskin(id:number)
+    {
+    
+     this.http.delete('https://localhost:44319/api/ProductColor/'+id).subscribe((res)=>{this.dataorder=res
+      this.toast.success("Valid") 
+        },(error:any)=>{
+      
+        setTimeout(() => {
+          this.toast.error("invalid")
+        }, 20000000000000000000000000);
+      })
+    }
+
+    CreateCOLOR(form:any)
+    {
+     
+      console.log(form)
+      const headerDict = {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      };
+      const requestOptions = {
+        headers: new HttpHeaders(headerDict),
+      };
+      console.log(form)
+      this.http.post('https://localhost:44319/api/ProductColor',form,requestOptions).subscribe((res)=>{console.log("sadda")
+    
+      this.toast.success("Valid") 
+    },(error:any)=>{this.toast.error("invalid")})
+    
+    
+    } 
+
+
+    CreateSkin(form:any)
+    {
+      console.log(form)
+      const headerDict = {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      };
+      const requestOptions = {
+        headers: new HttpHeaders(headerDict),
+      };
+      console.log(form)
+      this.http.post('https://localhost:44319/api/Skin',form,requestOptions).subscribe((res)=>{console.log("sadda")
+      this.toast.success("Valid") 
+    },(error:any)=>{this.toast.error("invalid")})
+    } 
 
 
 }

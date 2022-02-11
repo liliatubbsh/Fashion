@@ -246,8 +246,8 @@
             </ul>
         </div>
     </nav>
-</header>
-<div class="Ourd-flex align-items-stretch">
+  </header>
+  <div class="Ourd-flex align-items-stretch">
     <!-- Oursidebar Navigation-->
     <nav id="Oursidebar">
         <!-- Oursidebar Header-->
@@ -259,74 +259,70 @@
         </div><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Main</span>
         <ul class="list-unstyled">
             <li class="Oursidebar-item active">
-                <a class="Oursidebar-link" href="index.html">
+                <a class="Oursidebar-link" [routerLink]="'/adminDash/admin'">
                     <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                       <use xlink:href="#real-estate-1"> </use>
-                    </svg><span>Home </span></a>
+                    </svg><span>AdmiN Dashboard </span></a>
             </li>
             <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="tables.html">
+                <a class="Oursidebar-link" [routerLink]="'/adminDash/category'">
                     <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                       <use xlink:href="#portfolio-grid-1"> </use>
-                    </svg><span>Tables </span></a>
+                    </svg><span>Category </span></a>
             </li>
             <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="charts.html">
+                <a class="Oursidebar-link" [routerLink]="'/adminDash/employee'">
                     <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                       <use xlink:href="#sales-up-1"> </use>
-                    </svg><span>Charts </span></a>
+                    </svg><span>Employee </span></a>
             </li>
             <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="forms.html">
+                <a class="Oursidebar-link" [routerLink]="'/adminDash/product'">
                     <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                       <use xlink:href="#survey-1"> </use>
-                    </svg><span>Forms </span></a>
+                    </svg><span>Product </span></a>
             </li>
-            <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="#exampledropdownDropdown" data-bs-toggle="collapse">
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                      <use xlink:href="#browser-window-1"> </use>
-                    </svg><span>Example dropdown </span></a>
-                <ul class="collapse list-unstyled " id="exampledropdownDropdown">
-                    <li><a class="Oursidebar-link" href="#">Page</a></li>
-                    <li><a class="Oursidebar-link" href="#">Page</a></li>
-                    <li><a class="Oursidebar-link" href="#">Page</a></li>
-                </ul>
-            </li>
+  
+       
+       
+       
+          <li class="Oursidebar-item">
+              <a class="Oursidebar-link" [routerLink]="'/adminDash/proparty'">
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                    <use xlink:href="#survey-1"> </use>
+                  </svg><span>Proparty </span></a>
+          </li>
+  
+  
+          <li class="Oursidebar-item">
+              <a class="Oursidebar-link" [routerLink]="'/adminDash/order'">
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                    <use xlink:href="#survey-1"> </use>
+                  </svg><span>orders </span></a>
+          </li>
+  
+          <li class="Oursidebar-item">
+              <a class="Oursidebar-link" [routerLink]="'/adminDash/delivery'">
+                  <svg class="svg-icon svg-icon-sm svg-icon-heavy">
+                    <use xlink:href="#survey-1"> </use>
+                  </svg><span>Delivery </span></a>
+          </li>
+  
             <li class="Oursidebar-item">
                 <a class="Oursidebar-link" href="login.html">
                     <svg class="svg-icon svg-icon-sm svg-icon-heavy">
                       <use xlink:href="#disable-1"> </use>
                     </svg><span>Login page </span></a>
             </li>
-        </ul><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2">Extras</span>
-        <ul class="list-unstyled">
-            <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="#">
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                      <use xlink:href="#imac-screen-1"> </use>
-                    </svg><span>Demo </span></a>
-            </li>
-            <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="#">
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                      <use xlink:href="#chart-1"> </use>
-                    </svg><span>Demo </span></a>
-            </li>
-            <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="#">
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                      <use xlink:href="#quality-1"> </use>
-                    </svg><span>Demo </span></a>
-            </li>
-            <li class="Oursidebar-item">
-                <a class="Oursidebar-link" href="#">
-                    <svg class="svg-icon svg-icon-sm svg-icon-heavy">
-                      <use xlink:href="#security-shield-1"> </use>
-                    </svg><span>Demo </span></a>
-            </li>
-        </ul>
+        </ul><span class="text-uppercase text-gray-600 text-xs mx-3 px-2 heading mb-2"></span>
+       
     </nav>
+
+
+
+
+
+<div>
     <div class="page-content">
         <!-- Page Header-->
         <div class="bg-dash-dark-2 py-4">
@@ -335,13 +331,26 @@
             </div>
         </div>
         <section>
+            <a class="Oursidebar-link" [routerLink]="'/adminDash/createdelivery'">create delivery</a>
+                                        <a class="Oursidebar-link" [routerLink]="'/adminDash/createproduct'">create product</a>
+                                        <a class="Oursidebar-link" [routerLink]="'/adminDash/createEmployee'">create Employee</a>
+                                        <a class="Oursidebar-link" [routerLink]="'/adminDash/createproparty'">create proparty</a>
+                                        <a class="Oursidebar-link" [routerLink]="'/adminDash/createCategory'">create Category</a>
+                                
             <div class="Ourcontainer-fluid">
                 <div class="row gy-4">
                     <div class="col-md-3 col-sm-6">
                         <div class="Ourcard mb-0">
+                            
                             <div class="Ourcard-body">
                                 <div class="Ourd-flex align-items-end justify-content-between mb-2">
                                     <div class="me-2">
+
+                                        
+                                
+                                
+                                
+                                
                                         <svg class="svg-icon svg-icon-sm svg-icon-heavy text-gray-600 mb-2">
                             <use xlink:href="#user-1"> </use>
                           </svg>

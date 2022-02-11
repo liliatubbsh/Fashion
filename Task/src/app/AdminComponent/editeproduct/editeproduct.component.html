@@ -10,7 +10,7 @@
 
                     <div class="col-md-10">
                  
-                        <input  type="text" [(ngModel)]='name' value="{{ service.dataofProduct.name}}">
+                        <input  type="text" [(ngModel)]='productName' value="{{ productservice.dataofProduct.name}}">
 
                     </div>
                 </div>
@@ -22,7 +22,7 @@
 
                     <div class="col-md-10">
                  
-                        <input  type="text" [(ngModel)]='description' value="{{ service.dataofProduct.description}}">
+                        <input  type="text" [(ngModel)]='productdescription' value="{{ productservice.dataofProduct.description}}">
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <label class="control-label">price</label>
                     <div class="col-md-10">
-                        <input  type="text" [(ngModel)]='price' value="{{ service.dataofProduct.price}}">
+                        <input  type="text" [(ngModel)]='productPrice' value="{{ productservice.dataofProduct.price}}">
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
                     <label class="control-label">OffeR</label>
 
                     <div class="col-md-10">
-                 
-                        <input  type="text" [(ngModel)]='offeR_ID' value="{{ service.dataofProduct.offeR_ID}}">
+                 <h1>{{productservice.dataofProduct.amount}}</h1>
+                        <input  type="text" [(ngModel)]='productoffeR_ID' value="{{productservice.dataofProduct.offeR_ID}}">
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                     <label  class="control-label">Name category</label>
 
                     <div class="col-md-10">
-                        <input  type="text" [(ngModel)]='category_Id' value="{{ service.dataofProduct.name}}">
+                        <input  type="text" [(ngModel)]='productcategory_Id' value="{{ productservice.dataofProduct.category_Id}}">
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
 
                     <div class="col-md-10">
                  
-                        <input placeholder="categoey Name" type="date" [(ngModel)]='dateofadd' value="{{ service.dataofProduct.dateofadd |date:'yyyy-MM-dd'}}">
+                        <input placeholder="categoey Name" type="date" [(ngModel)]='productdateofadd' value="{{ productservice.dataofProduct.dateofadd |date:'yyyy-MM-dd'}}">
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@
                     <label class="control-label">Image</label>
                     <div class="col-md-10">   
                         <label>image</label>
-                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" value=" {{ service.dataofProduct.image_Path }}" (change)="processFile(imageInput.files)">                  
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" (change)="processFile(imageInput.files)">                  
                     </div>
                 </div>
             </div>

@@ -42,14 +42,17 @@ import { NgxSpinnerModule } from "ngx-spinner";
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-
-
+import { AdminDashboardComponent } from './AdminComponent/admin-dashboard/admin-dashboard.component';
+import { EditepropartyComponent } from './AdminComponent/editeproparty/editeproparty.component';
+import { CustomerComponent } from './AdminComponent/customer/customer.component';
+import { EditecustomerComponent } from './AdminComponent/editecustomer/editecustomer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    AdminDashboardComponent,
     UserComponent,
     UserIndexComponent,
     OrderAdminComponent,
@@ -77,6 +80,9 @@ import {MatTableModule} from '@angular/material/table';
     EditedeliveryComponent,
     CreatedeliveryComponent,
     EditeOrderComponent,
+    EditepropartyComponent,
+    CustomerComponent,
+    EditecustomerComponent,
    
     
   ],

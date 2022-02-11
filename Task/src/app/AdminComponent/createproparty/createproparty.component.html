@@ -1,6 +1,70 @@
 
 <div class="container">
     <h1>Create</h1>
+    <h4>Skin color</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-10">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Skin color</label>
+                        <div class="col-md-10">
+                            <input placeholder="Color_Of_Product" type="text" [(ngModel)]='SkinColor' required autofocus>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div><div class="col-md-6">
+       <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <button (click)="CreateSkin2()" class="btn btn-primary" > Submite</button>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////
+<div class="container">
+    <h1>Create</h1>
+    <h4>Color</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-10">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label  class="control-label">Color Of Product</label>
+                        <div class="col-md-10">
+                            <input placeholder="Color_Of_Product" type="text" [(ngModel)]='Color_Of_Product' required autofocus>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div><div class="col-md-6">
+       <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <button (click)="Createcolor2()" class="btn btn-primary" > Submite</button>
+    </div>
+</div>
+</div>
+
+
+
+
+
+////////////////////////////////////////////////////////////
+
+
+
+
+
+
+<div class="container">
+    <h1>Create</h1>
     <h4>Proparty</h4>
     <hr />
     <div class="row">
@@ -69,10 +133,13 @@
                         <label>AgE_PERIOD </label>
                         <select [(ngModel)]='P_AGE_ID'>
                             <option *ngFor="let item of homecreatepropaty.allAGE" value="{{item.id}}">{{item.agE_PERIOD}}</option>
-                     
+
                         </select>
                     </div>
                     </div>
+
+                    <div class="input-material-group mb-3">
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" (change)="processFile(imageInput.files)">
 
                 <div class="col-md-6">
                     <div class="form-group">

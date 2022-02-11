@@ -3,14 +3,20 @@
 <hr/>
 <div class="row">
     <div class="col-md-10">
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Emploee Name" class="control-label">Emploee Name</label>
+                    <label  class="control-label">First Name</label>
                     <div class="col-md-10">
-                    <input placeholder="Emploee Name" type="text" [(ngModel)]='Name' value="{{ service.dataofEmploye.Name}}">
+                    <input placeholder="First Name" type="text" [(ngModel)]='eFname' value="{{ service.dataofEmploye.fname}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  class="control-label">Last Name</label>
+                    <div class="col-md-10">
+                    <input placeholder="Last Name" type="text" [(ngModel)]='eLname' value="{{ service.dataofEmploye.lname}}">
                     </div>
                 </div>
             </div>
@@ -18,9 +24,9 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="email" class="control-label">Email</label>
+                    <label  class="control-label">Email</label>
                     <div class="col-md-10">
-                    <input placeholder="Email" type="text" [(ngModel)]='email' value="{{ service.dataofEmploye.email}}">
+                    <input placeholder="Email" type="text" [(ngModel)]='eEmail' value="{{ service.dataofEmploye.email}}">
                     </div>
                 </div>
             </div>
@@ -28,28 +34,18 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Emploee phone" class="control-label">phone</label>
+                    <label  class="control-label">phone</label>
                     <div class="col-md-10">
-                   <input placeholder="Emploee phone" type="text" [(ngModel)]='phone' value="{{ service.dataofEmploye.phone}}">
+                   <input placeholder="Emploee phone" type="text" [(ngModel)]='ePhone' value="{{ service.dataofEmploye.phone}}">
                     </div>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Emploee Age" class="control-label">Age</label>
+                    <label  class="control-label">address</label>
                     <div class="col-md-10">
-                  <input placeholder="Emploee Age" type="text" [(ngModel)]='address' value="{{ service.dataofEmploye.address}}">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label asp-for="Emploee salary" class="control-label">Emploee salary</label>
-                    <div class="col-md-10">
-                  <input placeholder="Emploee salary" type="text" [(ngModel)]='salary' value="{{ service.dataofEmploye.salary}}">
+                  <input placeholder="Emploee address" type="text" [(ngModel)]='eAddress' value="{{ service.dataofEmploye.address}}">
                     </div>
                 </div>
             </div>
@@ -57,26 +53,63 @@
 
             <div class="col-md-6">
                 <div class="form-group">
-                    <label asp-for="Email" class="control-label">Email</label>
-
+                    <label  class="control-label">Emploee salary</label>
                     <div class="col-md-10">
-                  <input placeholder="Email" type="text" [(ngModel)]='gender' value="{{ service.dataofEmploye.gender}}">
+                  <input placeholder="Emploee salary" type="text" [(ngModel)]='eSalary' value="{{ service.dataofEmploye.salary}}">
                     </div>
                 </div>
             </div>
 
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  class="control-label">gender</label>
+
+                    <div class="col-md-10">
+                  <input placeholder="gender" type="text" [(ngModel)]='eGender' value="{{service.dataofEmploye.gender}}">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label  class="control-label">gender</label>
+
+                    <div class="col-md-10">
+                  <input placeholder="gender" type="date" [(ngModel)]='eDateReg' value="{{service.dataofEmploye.dateReg}}">
+                    </div>
+                </div>
+            </div>
+
+ 
+            <div class="input-material-group mb-3">
+                <label class="label-material" for="Price"> Password </label>
+                  <input class="input-material" type="text" [(ngModel)]='ePassword' value="{{service.dataofEmploye.password}}" required>
+
+              </div>
+
+
+              <div class="input-material-group mb-3">
+                <label class="label-material" for="Price"> Username </label>
+                  <input class="input-material" type="text" [(ngModel)]='eUsername' value="{{service.dataofEmploye.username}}" required>      
+              </div>
+
+
+        
                       
             <div class="col-md-6">
                 <div class="form-group">
                     <label class="control-label">Image</label>
                     <div class="col-md-10">
-                        <input #imageInput type="file" accept="image/*" ngModel="imageInput"  (change)="processFile()">
+                        <input #imageInput type="file" accept="image/*" ngModel="imageInput" value="{{service.dataofEmploye.empImage}}"  (change)="processFile(imageInput.files)">
                     </div>
                 </div>
             </div>
-        </form>
+        
     </div>
 </div>
 
-<button type="submit" (click)="Updateemployee2()" > Edite</button>
+<button type="submit" (click)="Updateemployee2()" >Edit</button>
 
